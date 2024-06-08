@@ -21,7 +21,6 @@ public class com_step_loginPage {
         }
         catch(Exception e){
             LOGGER.error(e);
-            commonutils.getInstance().takescreenshot();
             Assert.fail(e.getMessage());
         }
 
@@ -35,7 +34,6 @@ public class com_step_loginPage {
         }
         catch(Exception e){
             LOGGER.error(e);
-            commonutils.getInstance().takescreenshot();
             Assert.fail(e.getMessage());
         }
     }
@@ -48,7 +46,6 @@ public class com_step_loginPage {
 
         catch(Exception e){
             LOGGER.error(e);
-            commonutils.getInstance().takescreenshot();
             Assert.fail(e.getMessage());
         }
     }
@@ -64,7 +61,6 @@ public class com_step_loginPage {
         }
         catch(Exception e){
             LOGGER.error(e);
-            commonutils.getInstance().takescreenshot();
             Assert.fail(e.getMessage());
         }
     }

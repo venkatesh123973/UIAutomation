@@ -3,11 +3,14 @@ package stepDefinition;
 import Utilities.commonutils;
 import com.page_objects.DirectorypageObjects;
 import io.cucumber.java.en.Then;
+//import org.apache.logging.log4j.LogManager;
+//import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 
 public class com_step_Directorypage {
+//  private static Logger LOGGER = LogManager.getLogger(com_step_Directorypage.class);
   private static Logger LOGGER = LogManager.getLogger(com_step_Directorypage.class);
     @Then("user clicks on the Directory link")
     public void user_clicks_on_the_directory_link() {
@@ -18,7 +21,7 @@ public class com_step_Directorypage {
 
       catch(Exception e){
         LOGGER.error(e);
-        commonutils.getInstance().takescreenshot();
+
         Assert.fail(e.getMessage());
       }
     }
@@ -33,7 +36,7 @@ public class com_step_Directorypage {
 
       catch(Exception e){
         LOGGER.error(e);
-        commonutils.getInstance().takescreenshot();
+
         Assert.fail(e.getMessage());
       }
     }
@@ -47,7 +50,7 @@ public class com_step_Directorypage {
 
       catch(Exception e){
         LOGGER.error(e);
-        commonutils.getInstance().takescreenshot();
+
         Assert.fail(e.getMessage());
       }
 
@@ -63,7 +66,7 @@ public class com_step_Directorypage {
       }
       catch(Exception e){
         LOGGER.error(e);
-        commonutils.getInstance().takescreenshot();
+
         Assert.fail(e.getMessage());
       }
     }
@@ -78,7 +81,7 @@ public class com_step_Directorypage {
 
       catch(Exception e){
         LOGGER.error(e);
-        commonutils.getInstance().takescreenshot();
+
         Assert.fail(e.getMessage());
       }
     }

@@ -4,7 +4,9 @@ import com.constants.constants;
 import com.driver_initialization.driversetup;
 import com.page_objects.DirectorypageObjects;
 import com.page_objects.Loginpage;
-import org.apache.commons.io.FileUtils;
+
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Scenario;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -64,14 +66,11 @@ public class commonutils {
         driversetup.getDriver().findElement(By.xpath("//span[normalize-space()='" + dropdownvalues + "']")).click();
     }
 
-    public static void takescreenshot() {
-        File screenshot = ((TakesScreenshot) driversetup.getDriver()).getScreenshotAs(OutputType.FILE);
-        try {
-            FileHandler.copy(screenshot, new File(browserinitialization.getScenarioname() +".png"));
-        }
-
-        catch (Exception e){
-            LOGGER.error(e);
+    @AfterStep
+    public static void takescreenshot(Scenario scenario) {
+        if(scenario.isFailed()) {
+             byte[] screenshot = ((TakesScreenshot) driversetup.getDriver()).getScreenshotAs(OutputType.BYTES);
+             scenario.attach(screenshot,"image/png","Error Screen");
         }
     }
 }
